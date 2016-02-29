@@ -8,7 +8,6 @@
     <include file="classpath:config/liquibase/changelog/20160229081049_added_entity_Customer.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160229081355_added_entity_FruitPack.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160229081656_added_entity_Week.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20160229081817_added_entity_DeliveryDay.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160229082514_added_entity_DeliveryDay.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160229083019_added_entity_Orders.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160229083243_added_entity_Employee.xml" relativeToChangelogFile="false"/>

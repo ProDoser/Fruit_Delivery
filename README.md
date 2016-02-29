@@ -1,5 +1,7 @@
 # fruitCrm
 
+Try demo at http://fruitcrm.herokuapp.com (if app is down it maight take 1-3 minutes to start for the first time).  
+
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
@@ -25,6 +27,12 @@ auto-refreshes when files change on your hard drive.
 Bower is used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in `bower.json`. You can also run `bower update` and `bower install` to manage dependencies.
 Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
+
+Since MySQL is used both for development and production, please add database source before runing application locally.
+Run MySQL server, create empty database "fruitcrm" (or change datasource in project properties) and add datasourse to your local
+project.
+
+Ensure that all dependencies loaded before run the application. Have fun!
 
 # Building for production
 
@@ -55,7 +63,7 @@ To setup this project in Jenkins, use the following configuration:
 
 * Project name: `fruitCrm`
 * Source Code Management
-    * Git Repository: `git@github.com:xxxx/fruitCrm.git`
+    * Git Repository: `git@github.com:ProDoser/fruitCrm.git`
     * Branches to build: `*/master`
     * Additional Behaviours: `Wipe out repository & force clone`
 * Build Triggers
