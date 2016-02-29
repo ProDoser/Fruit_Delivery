@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="fruitcrmApp.week.detail.title">Week</span> {{week.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.week.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{week.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.week.week">Week</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{week.week}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

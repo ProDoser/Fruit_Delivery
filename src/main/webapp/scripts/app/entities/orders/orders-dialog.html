@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myOrdersLabel" translate="fruitcrmApp.orders.home.createOrEditLabel">Create or edit a Orders</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="orders.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.orders.details" for="field_details">Details</label>
+            <input type="text" class="form-control" name="details" id="field_details"
+                    ng-model="orders.details"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.orders.orderDate" for="field_orderDate">OrderDate</label>
+            <input id="field_orderDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="orders.orderDate" is-open="datePickerForOrderDate.status.opened"
+            required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForOrderDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-show="editForm.orderDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.orderDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.orders.firstDelivery" for="field_firstDelivery">FirstDelivery</label>
+            <input id="field_firstDelivery" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="orders.firstDelivery" is-open="datePickerForFirstDelivery.status.opened"
+            required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForFirstDeliveryOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-show="editForm.firstDelivery.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstDelivery.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.orders.isActive" for="field_isActive">IsActive</label>
+            <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="orders.isActive"
+                     />
+            <div ng-show="editForm.isActive.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isActive.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="fruitcrmApp.orders.customer" for="field_customer">customer</label>
+            <select class="form-control" id="field_customer" name="customer" ng-model="orders.customer" ng-options="customer as customer.name for customer in customers track by customer.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="fruitcrmApp.orders.fruitPack" for="field_fruitPack">fruitPack</label>
+            <select class="form-control" id="field_fruitPack" name="fruitPack" ng-model="orders.fruitPack" ng-options="fruitPack as fruitPack.name for fruitPack in fruitpacks track by fruitPack.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="fruitcrmApp.orders.week" for="field_week">week</label>
+            <select class="form-control" id="field_week" name="week" ng-model="orders.week" ng-options="week as week.name for week in weeks track by week.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="fruitcrmApp.orders.deliveryDay" for="field_deliveryDay">deliveryDay</label>
+            <select class="form-control" id="field_deliveryDay" name="deliveryDay" ng-model="orders.deliveryDay" ng-options="deliveryDay as deliveryDay.name for deliveryDay in deliverydays track by deliveryDay.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

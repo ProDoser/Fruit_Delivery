@@ -1,0 +1,29 @@
+{
+    "fruitcrmApp": {
+        "orders" : {
+            "home": {
+                "title": "Orderss",
+                "createLabel": "Create a new Orders",
+                "createOrEditLabel": "Create or edit a Orders",
+                "search": "Search for Orders"
+            },
+            "created": "A new Orders is created with identifier {{ param }}",
+            "updated": "A Orders is updated with identifier {{ param }}",
+            "deleted": "A Orders is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Orders {{ id }}?"
+            },
+            "detail": {
+                "title": "Orders"
+            },
+            "details": "Details",
+            "orderDate": "OrderDate",
+            "firstDelivery": "FirstDelivery",
+            "isActive": "IsActive",
+            "customer": "Customer",
+            "fruitPack": "FruitPack",
+            "week": "Week",
+            "deliveryDay": "DeliveryDay"
+        }
+    }
+}

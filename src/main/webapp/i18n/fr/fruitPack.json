@@ -1,0 +1,26 @@
+{
+    "fruitcrmApp": {
+        "fruitPack" : {
+            "home": {
+                "title": "FruitPacks",
+                "createLabel": "Créer un nouveau FruitPack",
+                "createOrEditLabel": "Créer ou éditer un FruitPack",
+                "search": "Search for FruitPack"
+            },
+            "created": "Un nouveau FruitPack a été créé avec l'identifiant {{ param }}",
+            "updated": "Le FruitPack avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le FruitPack avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le FruitPack {{ id }} ?"
+            },
+            "detail": {
+                "title": "FruitPack"
+            },
+            "name": "Name",
+            "description": "Description",
+            "price": "Price",
+            "orders": "Orders"
+        }
+    }
+}
+

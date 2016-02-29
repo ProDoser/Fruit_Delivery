@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "fruitCrm",
+    "packageName": "com.fruitcrm",
+    "packageFolder": "com/fruitcrm",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "gradle",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "69158a970deed11062e54e2605ef75e72a4d53cd",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

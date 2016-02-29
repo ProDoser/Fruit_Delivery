@@ -1,0 +1,37 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "orders",
+            "otherEntityName": "orders",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "deliveryDay"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "weekday",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "1",
+            "fieldValidateRulesMax": "7"
+        }
+    ],
+    "changelogDate": "20160229082514",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

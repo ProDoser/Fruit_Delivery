@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myDeliveryDayLabel" translate="fruitcrmApp.deliveryDay.home.createOrEditLabel">Create or edit a DeliveryDay</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="deliveryDay.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.deliveryDay.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="deliveryDay.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.deliveryDay.weekday" for="field_weekday">Weekday</label>
+            <input type="number" class="form-control" name="weekday" id="field_weekday"
+                    ng-model="deliveryDay.weekday"
+                    required min="1" max="7" />
+            <div ng-show="editForm.weekday.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.weekday.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.weekday.$error.min" translate="entity.validation.min" translate-value-min="1">
+                    This field should be more than 1.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.weekday.$error.max" translate="entity.validation.max" translate-value-max="7">
+                    This field cannot be more than 7.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.weekday.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

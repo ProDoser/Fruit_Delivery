@@ -1,0 +1,25 @@
+{
+    "fruitcrmApp": {
+        "deliveryDay" : {
+            "home": {
+                "title": "DeliveryDays",
+                "createLabel": "Créer un nouveau DeliveryDay",
+                "createOrEditLabel": "Créer ou éditer un DeliveryDay",
+                "search": "Search for DeliveryDay"
+            },
+            "created": "Un nouveau DeliveryDay a été créé avec l'identifiant {{ param }}",
+            "updated": "Le DeliveryDay avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le DeliveryDay avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le DeliveryDay {{ id }} ?"
+            },
+            "detail": {
+                "title": "DeliveryDay"
+            },
+            "name": "Name",
+            "weekday": "Weekday",
+            "orders": "Orders"
+        }
+    }
+}
+

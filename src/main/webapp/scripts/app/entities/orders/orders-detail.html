@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="fruitcrmApp.orders.detail.title">Orders</span> {{orders.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.details">Details</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.details}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.orderDate">OrderDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.orderDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.firstDelivery">FirstDelivery</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.firstDelivery | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.isActive">IsActive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{orders.isActive}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.customer">customer</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="customer.detail({id:orders.customer.id})">{{orders.customer.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.fruitPack">fruitPack</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="fruitPack.detail({id:orders.fruitPack.id})">{{orders.fruitPack.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.week">week</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="week.detail({id:orders.week.id})">{{orders.week.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="fruitcrmApp.orders.deliveryDay">deliveryDay</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="deliveryDay.detail({id:orders.deliveryDay.id})">{{orders.deliveryDay.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

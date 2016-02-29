@@ -1,0 +1,134 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myCustomerLabel" translate="fruitcrmApp.customer.home.createOrEditLabel">Create or edit a Customer</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="customer.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="customer.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.contactPerson" for="field_contactPerson">ContactPerson</label>
+            <input type="text" class="form-control" name="contactPerson" id="field_contactPerson"
+                    ng-model="customer.contactPerson"
+                    required />
+            <div ng-show="editForm.contactPerson.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.contactPerson.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.phone" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                    ng-model="customer.phone"
+                    required />
+            <div ng-show="editForm.phone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phone.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="customer.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                    ng-model="customer.country"
+                    required />
+            <div ng-show="editForm.country.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.country.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="customer.city"
+                    required />
+            <div ng-show="editForm.city.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.city.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.postCode" for="field_postCode">PostCode</label>
+            <input type="text" class="form-control" name="postCode" id="field_postCode"
+                    ng-model="customer.postCode"
+                    required />
+            <div ng-show="editForm.postCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.postCode.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.street" for="field_street">Street</label>
+            <input type="text" class="form-control" name="street" id="field_street"
+                    ng-model="customer.street"
+                    required />
+            <div ng-show="editForm.street.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.street.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.comment" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment"
+                    ng-model="customer.comment"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="fruitcrmApp.customer.isPrivate" for="field_isPrivate">IsPrivate</label>
+            <input type="checkbox" class="form-control" name="isPrivate" id="field_isPrivate"
+                    ng-model="customer.isPrivate"
+                     />
+            <div ng-show="editForm.isPrivate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isPrivate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
