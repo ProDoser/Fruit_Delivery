@@ -17,15 +17,15 @@
                 "title": "Customer"
             },
             "name": "Name",
-            "contactPerson": "ContactPerson",
+            "contactPerson": "Contact Person",
             "phone": "Phone",
             "email": "Email",
             "country": "Country",
             "city": "City",
-            "postCode": "PostCode",
+            "postCode": "Post Code",
             "street": "Street",
             "comment": "Comment",
-            "isPrivate": "IsPrivate",
+            "isPrivate": "Private",
             "orders": "Orders"
         }
     }

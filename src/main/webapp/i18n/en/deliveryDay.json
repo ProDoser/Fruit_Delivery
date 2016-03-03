@@ -3,7 +3,7 @@
         "deliveryDay" : {
             "home": {
                 "title": "DeliveryDays",
-                "createLabel": "Create a new DeliveryDay",
+                "createLabel": "Create a new Delivery Day",
                 "createOrEditLabel": "Create or edit a DeliveryDay",
                 "search": "Search for DeliveryDay"
             },
@@ -14,7 +14,7 @@
                 "question": "Are you sure you want to delete DeliveryDay {{ id }}?"
             },
             "detail": {
-                "title": "DeliveryDay"
+                "title": "Delivery Day"
             },
             "name": "Name",
             "weekday": "Weekday",

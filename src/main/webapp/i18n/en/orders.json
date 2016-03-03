@@ -3,7 +3,7 @@
         "orders" : {
             "home": {
                 "title": "Orders",
-                "createLabel": "Create a new Orders",
+                "createLabel": "Create a new Order",
                 "createOrEditLabel": "Create or edit a Orders",
                 "search": "Search for Orders"
             },
@@ -17,13 +17,13 @@
                 "title": "Order"
             },
             "details": "Details",
-            "orderDate": "OrderDate",
-            "firstDelivery": "FirstDelivery",
-            "isActive": "IsActive",
+            "orderDate": "Order Date",
+            "firstDelivery": "First Delivery",
+            "isActive": "Active",
             "customer": "Customer",
-            "fruitPack": "FruitPack",
+            "fruitPack": "Fruit Pack",
             "week": "Week",
-            "deliveryDay": "DeliveryDay"
+            "deliveryDay": "Delivery Day"
         }
     }
 }

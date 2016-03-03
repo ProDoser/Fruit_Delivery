@@ -2,7 +2,7 @@
     "fruitcrmApp": {
         "orders" : {
             "home": {
-                "title": "Orders",
+                "title": "Orders for today",
                 "createLabel": "Create a new Order",
                 "createOrEditLabel": "Create or edit a Orders",
                 "search": "Search for Orders"
