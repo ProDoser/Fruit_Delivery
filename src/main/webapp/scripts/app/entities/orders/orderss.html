@@ -42,6 +42,7 @@ class="hidden-xs"                        translate="fruitcrmApp.orders.home.crea
                     <th></th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr ng-repeat="orders in orderss track by orders.id">
                     <td><a ui-sref="orders.detail({id:orders.id})">{{orders.id}}</a></td>
@@ -49,6 +50,7 @@ class="hidden-xs"                        translate="fruitcrmApp.orders.home.crea
                         <td>{{orders.orderDate | date:'mediumDate'}}</td>
                         <td>{{orders.firstDelivery | date:'mediumDate'}}</td>
                     <td>{{orders.isActive}}</td>
+
                     <td>
                         <a ui-sref="customer.detail({id:orders.customer.id})">{{orders.customer.name}}</a>
                     </td>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fruitcrmApp')
-    .controller('CustomerController', function ($scope, $state, Customer, CustomerSearch, ParseLinks) {
+    .controller('CustomerController', function ($scope, $state, Customer, CustomerSearch, ParseLinks, Orders) {
 
         $scope.customers = [];
         $scope.predicate = 'id';
@@ -19,6 +19,29 @@ angular.module('fruitcrmApp')
             $scope.loadAll();
         };
         $scope.loadAll();
+
+
+        /* added */
+
+        $scope.orders = [];
+        $scope.predicate = 'id';
+        $scope.reverse = true;
+        $scope.page = 1;
+        $scope.loadAllOrders = function() {
+            Orders.query({page: $scope.page - 1, size: 20, sort: [$scope.predicate + ',' + ($scope.reverse ? 'asc' : 'desc'), 'id']}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+                $scope.totalItems = headers('X-Total-Count');
+                $scope.orders = result;
+            });
+        };
+        $scope.loadPage = function(page) {
+            $scope.page = page;
+            $scope.loadAll();
+        };
+        $scope.loadAll();
+
+
+        /* ------------- */
 
 
         $scope.search = function () {

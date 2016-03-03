@@ -94,6 +94,72 @@
         </table>
     </div>
 
+
+    <!--{{orderss[0].details}}   example of working from orig page -->
+
+
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="predicate" ascending="reverse" callback="loadAll()"> <!--was loadAll-->
+                <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="orderDate"><span translate="fruitcrmApp.orders.orderDate">OrderDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="firstDelivery"><span translate="fruitcrmApp.orders.firstDelivery">FirstDelivery</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="isActive"><span translate="fruitcrmApp.orders.isActive">IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="customer.name"><span translate="fruitcrmApp.orders.customer">customer</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="fruitPack.name"><span translate="fruitcrmApp.orders.fruitPack">fruitPack</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="week.name"><span translate="fruitcrmApp.orders.week">week</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="deliveryDay.name"><span translate="fruitcrmApp.orders.deliveryDay">deliveryDay</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-if = "orders.customer.id == customer.id" ng-repeat="orders in orderss track by orders.id"> <!--if statement-->
+                <td><a ui-sref="orders.detail({id:orders.id})">{{orders.id}}</a></td>
+                <td>{{orders.details}}</td>
+                <td>{{orders.orderDate | date:'mediumDate'}}</td>
+                <td>{{orders.firstDelivery | date:'mediumDate'}}</td>
+                <td>{{orders.isActive}}</td>
+                <td>
+                    {{customer.name}} <!--link removed intentionally -->
+                </td>
+                <td>
+                    <a ui-sref="fruitPack.detail({id:orders.fruitPack.id})">{{orders.fruitPack.name}}</a>
+                </td>
+                <td>
+                    <a ui-sref="week.detail({id:orders.week.id})">{{orders.week.name}}</a>
+                </td>
+                <td>
+                    <a ui-sref="deliveryDay.detail({id:orders.deliveryDay.id})">{{orders.deliveryDay.name}}</a>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="orders.detail({id:orders.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="orders.edit({id:orders.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="orders.delete({id:orders.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
     <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">

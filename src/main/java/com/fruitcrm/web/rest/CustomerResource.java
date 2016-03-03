@@ -2,7 +2,9 @@ package com.fruitcrm.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.fruitcrm.domain.Customer;
+import com.fruitcrm.domain.Orders;
 import com.fruitcrm.repository.CustomerRepository;
+import com.fruitcrm.repository.OrdersRepository;
 import com.fruitcrm.repository.search.CustomerSearchRepository;
 import com.fruitcrm.web.rest.util.HeaderUtil;
 import com.fruitcrm.web.rest.util.PaginationUtil;
@@ -38,6 +40,7 @@ public class CustomerResource {
         
     @Inject
     private CustomerRepository customerRepository;
+    private OrdersRepository ordersRepository;
     
     @Inject
     private CustomerSearchRepository customerSearchRepository;
@@ -111,6 +114,15 @@ public class CustomerResource {
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    /*manually added */
+    public ResponseEntity<List<Orders>> getAllOrderss(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Orderss");
+        Page<Orders> page = ordersRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/orderss");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+    /*-------------*/
 
     /**
      * DELETE  /customers/:id -> delete the "id" customer.
