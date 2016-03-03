@@ -16,6 +16,7 @@ angular.module('fruitcrmApp')
 
 
 
+
         $scope.orderss = [];
         $scope.predicate = 'id';
         $scope.reverse = true;
@@ -27,6 +28,10 @@ angular.module('fruitcrmApp')
                 $scope.orderss = result;
             });
         };
+
+
+
+
         $scope.loadPage = function(page) {
             $scope.page = page;
             $scope.loadAll();

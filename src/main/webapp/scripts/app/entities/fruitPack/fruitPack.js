@@ -40,6 +40,7 @@ angular.module('fruitcrmApp')
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('fruitPack');
+                        $translatePartialLoader.addPart('orders');
                         return $translate.refresh();
                     }],
                     entity: ['$stateParams', 'FruitPack', function($stateParams, FruitPack) {
