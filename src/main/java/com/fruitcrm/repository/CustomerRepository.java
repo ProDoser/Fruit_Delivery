@@ -15,6 +15,5 @@ import java.util.List;
 public interface
 CustomerRepository extends JpaRepository<Customer,Long> {
 
-    Page<Customer> findByOrders_OrdersId(int id);
 
 }

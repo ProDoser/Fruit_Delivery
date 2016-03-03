@@ -37,14 +37,13 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class CustomerResource {
 
     private final Logger log = LoggerFactory.getLogger(CustomerResource.class);
-        
+
     @Inject
     private CustomerRepository customerRepository;
-    private OrdersRepository ordersRepository;
-    
+
     @Inject
     private CustomerSearchRepository customerSearchRepository;
-    
+
     /**
      * POST  /customers -> Create a new customer.
      */
@@ -93,7 +92,7 @@ public class CustomerResource {
     public ResponseEntity<List<Customer>> getAllCustomers(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Customers");
-        Page<Customer> page = customerRepository.findAll(pageable); 
+        Page<Customer> page = customerRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/customers");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -114,15 +113,7 @@ public class CustomerResource {
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-    /*manually added */
-    public ResponseEntity<List<Orders>> getAllOrderss(Pageable pageable)
-        throws URISyntaxException {
-        log.debug("REST request to get a page of Orderss");
-        Page<Orders> page = ordersRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/orderss");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
-    /*-------------*/
+
 
     /**
      * DELETE  /customers/:id -> delete the "id" customer.
