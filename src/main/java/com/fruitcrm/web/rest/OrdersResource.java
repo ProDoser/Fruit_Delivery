@@ -20,6 +20,10 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoField;
+import java.time.temporal.IsoFields;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -35,13 +39,13 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class OrdersResource {
 
     private final Logger log = LoggerFactory.getLogger(OrdersResource.class);
-        
+
     @Inject
     private OrdersRepository ordersRepository;
-    
+
     @Inject
     private OrdersSearchRepository ordersSearchRepository;
-    
+
     /**
      * POST  /orderss -> Create a new orders.
      */
@@ -90,10 +94,37 @@ public class OrdersResource {
     public ResponseEntity<List<Orders>> getAllOrderss(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Orderss");
-        Page<Orders> page = ordersRepository.findAll(pageable); 
+        Page<Orders> page = ordersRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/orderss");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
+
+    /**
+     * GET  /today -> get all the orders for current day.
+     */
+    @RequestMapping(value = "/today",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Orders>> getOrdersForToday(Pageable pageable)
+        throws URISyntaxException {
+
+        /**
+         * Get current day of week and week of year
+         */
+
+        ZoneId zoneId = ZoneId.of ( "Europe/Helsinki" );
+        ZonedDateTime now = ZonedDateTime.now ( zoneId );
+        int DayOfWeek = now.get(ChronoField.DAY_OF_WEEK);
+        int WeekOfYear = now.get ( IsoFields.WEEK_OF_WEEK_BASED_YEAR )%2;
+
+        log.debug("REST request to get a page of Orders for today");
+        Page<Orders> page = ordersRepository.findByDeliveryDay_weekdayAndWeek_weekNotLike(DayOfWeek, WeekOfYear, pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/today");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+
 
     /**
      * GET  /orderss/:id -> get the "id" orders.

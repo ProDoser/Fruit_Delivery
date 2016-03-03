@@ -17,12 +17,12 @@ angular.module('fruitcrmApp')
                 views: {
                     'content@': {
                         templateUrl: 'scripts/app/custom/today.html',
-                        controller: 'OrdersController'
+                        controller: 'OrdersTodayController'
                     }
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('orders');
+                        $translatePartialLoader.addPart('today');
                         $translatePartialLoader.addPart('global');
                         return $translate.refresh();
                     }]
