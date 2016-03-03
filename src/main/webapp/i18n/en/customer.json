@@ -5,7 +5,8 @@
                 "title": "Customers",
                 "createLabel": "Create a new Customer",
                 "createOrEditLabel": "Create or edit a Customer",
-                "search": "Search for Customer"
+                "search": "Search for Customer",
+                "addOrder": "Add a new order"
             },
             "created": "A new Customer is created with identifier {{ param }}",
             "updated": "A Customer is updated with identifier {{ param }}",

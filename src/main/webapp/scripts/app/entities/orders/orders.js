@@ -76,6 +76,9 @@ angular.module('fruitcrmApp')
                     })
                 }]
             })
+
+
+
             .state('orders.edit', {
                 parent: 'orders',
                 url: '/{id}/edit',
