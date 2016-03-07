@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface OrdersRepository extends JpaRepository<Orders,Long> {
 
-    Page<Orders> findByDeliveryDay_weekdayAndWeek_weekNotLike(int deliveryDay , int week, Pageable pageable);
+    Page<Orders> findByDeliveryDay_weekdayAndIsActiveAndWeek_weekNotLike(int deliveryDay , boolean active, int week, Pageable pageable);
 
     //@Query("select o from Orders o where o.weekday = ?1")
 

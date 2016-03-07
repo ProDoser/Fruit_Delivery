@@ -117,9 +117,10 @@ public class OrdersResource {
         ZonedDateTime now = ZonedDateTime.now ( zoneId );
         int DayOfWeek = now.get(ChronoField.DAY_OF_WEEK);
         int WeekOfYear = now.get ( IsoFields.WEEK_OF_WEEK_BASED_YEAR )%2;
+        boolean active = true;
 
         log.debug("REST request to get a page of Orders for today");
-        Page<Orders> page = ordersRepository.findByDeliveryDay_weekdayAndWeek_weekNotLike(DayOfWeek, WeekOfYear, pageable);
+        Page<Orders> page = ordersRepository.findByDeliveryDay_weekdayAndIsActiveAndWeek_weekNotLike(DayOfWeek, active, WeekOfYear, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/today");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
