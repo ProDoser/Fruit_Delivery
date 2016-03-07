@@ -47,7 +47,11 @@ class="hidden-xs"                        translate="fruitcrmApp.orders.home.crea
                     <td>{{orders.details}}</td>
                         <td>{{orders.orderDate | date:'mediumDate'}}</td>
                         <td>{{orders.firstDelivery | date:'mediumDate'}}</td>
-                    <td>{{orders.isActive}}</td>
+                    <td class="text-center">
+                        <i class="glyphicon"
+                           ng-class="{'glyphicon-ok text-success': orders.isActive,
+                                      'glyphicon-remove text-danger': !orders.isActive}"></i>
+                    </td>
 
                     <td>
                         <a ui-sref="customer.detail({id:orders.customer.id})">{{orders.customer.name}}</a>
