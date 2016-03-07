@@ -31,7 +31,6 @@
         <table class="jh-table table table-striped">
             <thead>
             <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="orderDate"><span translate="fruitcrmApp.orders.orderDate">OrderDate</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="firstDelivery"><span translate="fruitcrmApp.orders.firstDelivery">FirstDelivery</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -45,7 +44,6 @@
             </thead>
             <tbody ui-sortable>
             <tr ng-repeat="orders in orderss track by orders.id" class="orders-today">
-                <td><a ui-sref="orders.detail({id:orders.id})">{{orders.id}}</a></td>
                 <td>{{orders.details}}</td>
                 <td>{{orders.orderDate | date:'mediumDate'}}</td>
                 <td>{{orders.firstDelivery | date:'mediumDate'}}</td>
