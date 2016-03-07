@@ -31,35 +31,22 @@
         <table class="jh-table table table-striped">
             <thead>
             <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="orderDate"><span translate="fruitcrmApp.orders.orderDate">OrderDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="firstDelivery"><span translate="fruitcrmApp.orders.firstDelivery">FirstDelivery</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="isActive"><span translate="fruitcrmApp.orders.isActive">IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>
+
                 <th jh-sort-by="customer.name"><span translate="fruitcrmApp.orders.customer">customer</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="fruitPack.name"><span translate="fruitcrmApp.orders.fruitPack">fruitPack</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="week.name"><span translate="fruitcrmApp.orders.week">week</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="deliveryDay.name"><span translate="fruitcrmApp.orders.deliveryDay">deliveryDay</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th></th>
             </tr>
             </thead>
             <tbody ui-sortable>
             <tr ng-repeat="orders in orderss track by orders.id" class="orders-today">
-                <td>{{orders.details}}</td>
-                <td>{{orders.orderDate | date:'mediumDate'}}</td>
-                <td>{{orders.firstDelivery | date:'mediumDate'}}</td>
-                <td>{{orders.isActive}}</td>
                 <td>
                     <a ui-sref="customer.detail({id:orders.customer.id})">{{orders.customer.name}}</a>
                 </td>
                 <td>
                     <a ui-sref="fruitPack.detail({id:orders.fruitPack.id})">{{orders.fruitPack.name}}</a>
                 </td>
-                <td>
-                    <a ui-sref="week.detail({id:orders.week.id})">{{orders.week.name}}</a>
-                </td>
-                <td>
-                    <a ui-sref="deliveryDay.detail({id:orders.deliveryDay.id})">{{orders.deliveryDay.name}}</a>
-                </td>
+                <td>{{orders.details}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
