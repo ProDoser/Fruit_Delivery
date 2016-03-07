@@ -40,7 +40,7 @@ class="hidden-xs"                        translate="fruitcrmApp.fruitPack.home.c
                 <tr ng-repeat="fruitPack in fruitPacks track by fruitPack.id">
                     <td>{{fruitPack.name}}</td>
                     <td>{{fruitPack.description}}</td>
-                    <td>{{fruitPack.price}}</td>
+                    <td>{{fruitPack.price | number: 2}}&#8364</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
