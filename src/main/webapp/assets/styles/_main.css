@@ -3,6 +3,10 @@
     background-size: contain;
 }
 
+.orders-today {
+    cursor: move;
+}
+
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media

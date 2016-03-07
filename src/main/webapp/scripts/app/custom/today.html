@@ -43,8 +43,8 @@
                 <th></th>
             </tr>
             </thead>
-            <tbody>
-            <tr ng-repeat="orders in orderss track by orders.id">
+            <tbody ui-sortable>
+            <tr ng-repeat="orders in orderss track by orders.id" class="orders-today">
                 <td><a ui-sref="orders.detail({id:orders.id})">{{orders.id}}</a></td>
                 <td>{{orders.details}}</td>
                 <td>{{orders.orderDate | date:'mediumDate'}}</td>
