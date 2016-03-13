@@ -3,6 +3,10 @@
 angular.module('fruitcrmApp')
     .controller('CustomerController', function ($scope, $state, Customer, CustomerSearch, ParseLinks, Orders) {
 
+
+        $scope.private = "Private";
+        $scope.company = 'Company';
+
         $scope.customers = [];
         $scope.predicate = 'id';
         $scope.reverse = true;

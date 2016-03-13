@@ -54,7 +54,14 @@ class="hidden-xs"                        translate="fruitcrmApp.customer.home.cr
                     <td>{{customer.postCode}}</td>
                     <td>{{customer.street}}</td>
                     <td>{{customer.comment}}</td>
-                    <td>{{customer.isPrivate}}</td>
+
+                    <td>
+                        <span class="glyphicon"
+                           ng-class="{'glyphicon-ok text-success': customer.isPrivate,
+                                      'glyphicon-remove text-danger': !customer.isPrivate}">
+
+                        </span>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
