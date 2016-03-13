@@ -88,6 +88,10 @@ class="hidden-xs"                        translate="fruitcrmApp.customer.home.cr
             </tbody>
         </table>
     </div>
+
+    <div><strong>Total amount of Customers: {{totalItems}}</strong></div>
+
+
     <div class="text-center">
         <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
     </div>
