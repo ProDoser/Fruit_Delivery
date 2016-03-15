@@ -52,4 +52,6 @@ angular.module('fruitcrmApp')
                 id: null
             };
         };
+
+        $scope.status = "danger";
     });

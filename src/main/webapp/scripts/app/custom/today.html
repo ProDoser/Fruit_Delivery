@@ -35,12 +35,13 @@
                 <th jh-sort-by="customer.name"><span translate="fruitcrmApp.orders.customer">customer</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="fruitPack.name"><span translate="fruitcrmApp.orders.fruitPack">fruitPack</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="employee.fName">Driver<span class="glyphicon glyphicon-sort"></span></th>
+                <th>Driver<span class="glyphicon glyphicon-sort"></span></th>
                 <th></th>
             </tr>
             </thead>
             <tbody ui-sortable>
-            <tr ng-repeat="orders in orderss track by orders.id" class="orders-today">
+
+            <tr ng-repeat="orders in orderss track by orders.id" class="orders-today" ng-class="status">
                 <td>
                     <a ui-sref="customer.detail({id:orders.customer.id})">{{orders.customer.name}}</a>
                 </td>
@@ -54,6 +55,20 @@
                     </select>
                 </td>
                 <td class="text-right">
+
+                        <label>
+                            <input type="radio" ng-model="status" value="danger">
+                            Not ready
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="status" value="active">
+                            Packed
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="status" value="success">
+                            Shiped
+                        </label>
+
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 ui-sref="orders.detail({id:orders.id})"
