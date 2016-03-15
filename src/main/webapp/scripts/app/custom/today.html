@@ -35,6 +35,7 @@
                 <th jh-sort-by="customer.name"><span translate="fruitcrmApp.orders.customer">customer</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="fruitPack.name"><span translate="fruitcrmApp.orders.fruitPack">fruitPack</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="employee.fName">Driver<span class="glyphicon glyphicon-sort"></span></th>
                 <th></th>
             </tr>
             </thead>
@@ -47,6 +48,11 @@
                     <a ui-sref="fruitPack.detail({id:orders.fruitPack.id})">{{orders.fruitPack.name}}</a>
                 </td>
                 <td>{{orders.details}}</td>
+                <td>
+                    <select class="form-control" id="field_customer" name="customer" ng-model="employee" ng-options="employee as employee.fName+' '+employee.lName for employee in employees track by employee.id">
+                        <option value=""></option>
+                    </select>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

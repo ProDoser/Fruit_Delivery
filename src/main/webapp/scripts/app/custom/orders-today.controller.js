@@ -4,9 +4,10 @@
 'use strict';
 
 angular.module('fruitcrmApp')
-    .controller('OrdersTodayController', function ($scope, $state, OrdersToday, OrdersSearch, ParseLinks) {
+    .controller('OrdersTodayController', function ($scope, $state, OrdersToday, OrdersSearch, Employee, EmployeeSearch, ParseLinks) {
 
         $scope.orderss = [];
+        $scope.employees = [];
         $scope.predicate = 'id';
         $scope.reverse = true;
         $scope.page = 1;
@@ -15,6 +16,9 @@ angular.module('fruitcrmApp')
                 $scope.links = ParseLinks.parse(headers('link'));
                 $scope.totalItems = headers('X-Total-Count');
                 $scope.orderss = result;
+            });
+            Employee.query(function(result) {
+                $scope.employees = result;
             });
         };
         $scope.loadPage = function(page) {
