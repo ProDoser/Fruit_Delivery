@@ -54,4 +54,10 @@ angular.module('fruitcrmApp')
         };
 
         $scope.status = "danger";
+
+        $scope.notReady = 0;
+
+
+
+
     });

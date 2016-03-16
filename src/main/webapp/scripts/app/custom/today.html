@@ -57,30 +57,16 @@
                     </select>
                 </td>
                 <td>
-                        <select class="form-control" id="sel1" ng-model = "status">
+                        <select ng-change="update()" class="form-control" id="sel1" ng-model = "status">
                             <option value = "danger">Not ready</option>
-                            <option value= "warning">Packed</option>
-                            <option value = "info">Being delivered</option>
-                            <option value= "default">Delivered</option>
+                            <option value = "warning">Packed</option>
+                            <option value = "info" ng-disabled = "!employee">Being delivered</option>
+                            <option value = "default" ng-disabled = "!employee">Delivered</option>
                         </select>
                 </td>
 
 
                 <td class="text-right">
-
-                        <!--<label>
-                            <input type="radio" ng-model="status" value="danger">
-                            Not ready
-                        </label>
-                        <label>
-                            <input type="radio" ng-model="status" value="active">
-                            Packed
-                        </label>
-                        <label>
-                            <input type="radio" ng-model="status" value="success">
-                            Shiped
-                        </label>-->
-
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 ui-sref="orders.detail({id:orders.id})"
@@ -107,8 +93,7 @@
         </table>
     </div>
     <div><strong>Total amount of Orders for today: {{totalItems}}</strong></div>
-
-
+    {{ orderss.length }}
     <div class="text-center">
         <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
     </div>
