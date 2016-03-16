@@ -18,10 +18,38 @@
     background-color: #D7EA9C;
 }
 
+body {
+    background-color: #AFC38E;
+}
 
+h2 {
+    color: #201346;
+}
 
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,
+.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #D7EA9C;
+    border-color: #859E34;
+    color: black;
+}
+
+.btn-primary {
+    background-color: #859E34;
+    border-color: #7C942C;
+}
+
+.btn-primary:hover {
+    background-color: #779027;
+    border-color: #6B8025;
+}
 
 
 /* dark #201346 */
 /* bright #762982 */
 /* select #D7EA9C */
+/* bg #AFC38E */
+/* green border and buttons #859E34 */
+/* button border #7C942C */
+
+/* button:hovered #779027 */
+/* btn border:hovered #6B8025 */
