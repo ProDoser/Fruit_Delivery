@@ -33,10 +33,12 @@
             <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
 
                 <th jh-sort-by="customer.name"><span translate="fruitcrmApp.orders.customer">customer</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="fruitPack.name"><span translate="fruitcrmApp.orders.fruitPack">fruitPack</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th jh-sort-by="details"><span translate="fruitcrmApp.orders.details">Details</span> <span class="glyphicon glyphicon-sort"></span></th>
-                <th>Driver<span class="glyphicon glyphicon-sort"></span></th>
-                <th></th>
+                <th jh-sort-by="fruitPack.name"><span class = "glyphicon glyphicon-apple"></span>&nbsp;Fruit Pack <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="details"><span class = "glyphicon glyphicon-info-sign"></span>&nbsp;Info <span class="glyphicon glyphicon-sort"></span></th>
+                <th><span class = "glyphicon glyphicon-road"></span>&nbsp;Driver</th>
+                <th>Status</th>
+
+
             </tr>
             </thead>
             <tbody ui-sortable>
@@ -54,9 +56,19 @@
                         <option value=""></option>
                     </select>
                 </td>
+                <td>
+                        <select class="form-control" id="sel1" ng-model = "status">
+                            <option value = "danger">Not ready</option>
+                            <option value= "warning">Packed</option>
+                            <option value = "info">Being delivered</option>
+                            <option value= "default">Delivered</option>
+                        </select>
+                </td>
+
+
                 <td class="text-right">
 
-                        <label>
+                        <!--<label>
                             <input type="radio" ng-model="status" value="danger">
                             Not ready
                         </label>
@@ -67,7 +79,7 @@
                         <label>
                             <input type="radio" ng-model="status" value="success">
                             Shiped
-                        </label>
+                        </label>-->
 
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
@@ -95,6 +107,8 @@
         </table>
     </div>
     <div><strong>Total amount of Orders for today: {{totalItems}}</strong></div>
+
+
     <div class="text-center">
         <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
     </div>
