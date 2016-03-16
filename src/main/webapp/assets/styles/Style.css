@@ -1,0 +1,27 @@
+.navbar-default .navbar-brand {
+    color: #762982 !important;
+}
+
+.navbar-nav > li > a {
+    color: #762982 !important;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #201346 !important;
+}
+
+.dropdown-menu > li > a {
+    color: #762982 !important;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #D7EA9C;
+}
+
+
+
+
+
+/* dark #201346 */
+/* bright #762982 */
+/* select #D7EA9C */
