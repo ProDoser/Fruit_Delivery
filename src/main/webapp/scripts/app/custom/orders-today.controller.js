@@ -53,10 +53,37 @@ angular.module('fruitcrmApp')
             };
         };
 
-        $scope.status = "danger";
 
+
+            $scope.statuses = [{
+                value: 'danger',
+                label: 'Not ready',
+                required: null
+            }, {
+                value: 'warning',
+                label: 'Packed',
+                required: null
+            }, {
+                value: 'info',
+                label: 'Being delivered',
+                required: '!employee'
+            }, {
+                value: 'default',
+                label: 'Delivered',
+                required: '!employee'
+            }];
+
+
+        $scope.status2 = null;
+
+        $scope.status = "danger";
         $scope.notReady = 0;
 
+        $scope.update = function() {
+            $scope.emp = employee.se
+            // use $scope.selectedItem.code and $scope.selectedItem.name here
+            // for other stuff ...
+        }
 
 
 
