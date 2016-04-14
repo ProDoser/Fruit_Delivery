@@ -54,36 +54,53 @@ angular.module('fruitcrmApp')
         };
 
 
+        $scope.status = "danger";
 
-            $scope.statuses = [{
-                value: 'danger',
-                label: 'Not ready',
-                required: null
-            }, {
-                value: 'warning',
-                label: 'Packed',
-                required: null
-            }, {
-                value: 'info',
-                label: 'Being delivered',
-                required: '!employee'
-            }, {
-                value: 'default',
-                label: 'Delivered',
-                required: '!employee'
-            }];
+        $scope.statuses = [{
+            value: 'danger',
+            label: 'Not ready',
+            required: null
+        }, {
+            value: 'warning',
+            label: 'Packed',
+            required: null
+        }, {
+            value: 'info',
+            label: 'Being delivered',
+            required: '!employee'
+        }, {
+            value: 'default',
+            label: 'Delivered',
+            required: '!employee'
+        }];
+
+        /*
+
+        $scope.dangerCounter = 0;
+        $scope.warningCounter = 0;
+        $scope.infoCounter = 0;
+        $scope.defaultCounter = 0;
+        $scope.test = 0;
+        $scope.stats = function (){
+            var log = [];
+
+            angular.forEach($scope.statuses, function(value) {
+                if (value.value == 'danger')
+                    $scope.dangerCounter++;
+                else
+                    $scope.dangerCounter--;
+            }, log)
+
+        }
+*/
+
 
 
         $scope.status2 = null;
 
-        $scope.status = "danger";
         $scope.notReady = 0;
 
-        $scope.update = function() {
-            $scope.emp = employee.se
-            // use $scope.selectedItem.code and $scope.selectedItem.name here
-            // for other stuff ...
-        }
+
 
 
 
